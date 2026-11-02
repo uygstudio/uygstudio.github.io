@@ -78,6 +78,7 @@
         <li>Favorilerin, albümlerin ve ayarların yalnızca cihazında durur. Bizim sunucularımıza gitmez.</li>
         <li>Ücretsiz sürümde reklamlar Google AdMob ile gösterilir. AdMob, reklam için bazı cihaz bilgilerini işler.</li>
         <li>Satın almaları Google Play ya da App Store yapar. Abonelik durumunu RevenueCat doğrular. Kart bilgilerini hiçbir zaman görmeyiz.</li>
+        <li>Çökmeleri düzeltmek ve hangi özelliklerin kullanıldığını görmek için Google'ın Firebase hizmetlerini kullanırız. Avrupa'da kullanım verisi yalnızca izin verirsen toplanır.</li>
       </ul>
     </div>
 
@@ -108,7 +109,8 @@
       sahtekârlığı önlemek için kullanır.</p>
     <ul>
       <li>Avrupa Ekonomik Alanı, Birleşik Krallık ve İsviçre'de, kişiselleştirilmiş reklamdan önce Google'ın onay formuyla
-        iznin istenir. Seçimini sonradan Ayarlar › "Reklam gizlilik tercihleri"nden değiştirebilirsin.</li>
+        iznin istenir. Bu seçim kullanım analizi için de geçerlidir (bölüm 7). Seçimini sonradan Ayarlar › "Reklam gizlilik
+        tercihleri"nden değiştirebilirsin.</li>
       <li>iOS'ta kişiselleştirilmiş reklam için IDFA'ya erişmeden önce Apple'ın izin penceresi çıkar. İzni
         Ayarlar › Gizlilik ve Güvenlik › Takip'ten istediğin zaman geri alabilirsin.</li>
       <li>Android'de reklam kimliğini cihaz ayarlarından sıfırlayabilir ya da silebilirsin.</li>
@@ -132,18 +134,34 @@
       <li>Ana ekran widget'ı cihazındaki bilgileri gösterir.</li>
     </ul>
 
-    <h2>7. Analiz ve çökme raporları</h2>
-    <p>Uygulamada kendi analiz ya da çökme raporu aracımız yok. Cihaz ayarlarında izin verdiysen Google Play ve Apple,
-      uygulamanın çökmeleri hakkında anonim teknik bilgileri bizimle paylaşabilir.</p>
+    <h2>7. Çökme raporları ve kullanım analizi (Firebase)</h2>
+    <p>Uygulamayı geliştirmek için Google'ın Firebase hizmetlerini kullanırız:</p>
+    <ul>
+      <li><strong>Crashlytics:</strong> Uygulama çöktüğünde ya da bir hata olduğunda bir rapor gönderir: hatanın kod
+        içindeki yeri, cihaz modeli, işletim sistemi ve uygulama sürümü, boş bellek ve depolama, zaman ve bir kurulum
+        kimliği. Bu raporları yalnızca hataları bulup düzeltmek için kullanırız; Google onları 90 gün saklar.</li>
+      <li><strong>Analytics:</strong> Uygulamanın nasıl kullanıldığını gösteren olayları kaydeder: uygulamanın açılması,
+        görüntülenen ekranlar ve kullanılan özellikler, oturum süresi. Bunlarla birlikte uygulama örneği kimliği, cihaz
+        modeli, işletim sistemi, dil, uygulama sürümü ve IP adresinden çıkarılan ülke ya da bölge işlenir. Adın ya da
+        e-postan yoktur. Bu verileri uygulamayı iyileştirmek için kullanırız, reklam kişiselleştirmek için değil; kullanıcı
+        düzeyindeki veriler 2 ay saklanır.</li>
+      <li>Avrupa Ekonomik Alanı, Birleşik Krallık ve İsviçre'de Analytics, onay formunda "cihazda bilgi depolama ve
+        bilgiye erişim" için izin vermedikçe cihazında hiçbir tanımlayıcı saklamaz. İznini Ayarlar › "Reklam gizlilik
+        tercihleri"nden değiştirebilirsin.</li>
+    </ul>
+    <p>Firebase'in verileri nasıl işlediği: <a href="https://firebase.google.com/support/privacy">firebase.google.com/support/privacy</a>.
+      Ayrıca cihaz ayarlarında izin verdiysen Google Play ve Apple da çökmeler hakkında anonim teknik bilgileri bizimle
+      paylaşabilir.</p>
 
     <h2>8. Hukuki dayanak ve yurt dışına aktarım</h2>
-    <p>Kişiselleştirilmiş reklam için izne (gerektiği yerlerde), satın almalar için sözleşmenin yerine getirilmesine,
-      güvenlik ve sahtekârlığın önlenmesi için meşru menfaate dayanırız. Google ve RevenueCat verileri Türkiye ve Avrupa
-      dışında, örneğin ABD'de işleyebilir.</p>
+    <p>Kişiselleştirilmiş reklam ve Avrupa'da kullanım analizi için izne, satın almalar için sözleşmenin yerine
+      getirilmesine; çökme raporları, diğer bölgelerde kullanım analizi, güvenlik ve sahtekârlığın önlenmesi için meşru
+      menfaate dayanırız. Google ve RevenueCat verileri Türkiye ve Avrupa dışında, örneğin ABD'de işleyebilir.</p>
 
     <h2>9. Saklama süresi</h2>
-    <p>Cihazındaki bilgiler, uygulamayı silene kadar cihazında kalır. Google ve RevenueCat'in tuttuğu bilgilerin süresi
-      kendi politikalarına bağlıdır. RevenueCat'teki satın alma kayıtlarının silinmesini bizden isteyebilirsin.</p>
+    <p>Cihazındaki bilgiler, uygulamayı silene kadar cihazında kalır. Crashlytics raporları 90 gün, kullanıcı düzeyindeki
+      Analytics verileri 2 ay saklanır. Google'ın reklam için ve RevenueCat'in tuttuğu bilgilerin süresi kendi
+      politikalarına bağlıdır. RevenueCat'teki satın alma kayıtlarının silinmesini bizden isteyebilirsin.</p>
 
     <h2>10. Hakların</h2>
     <p>6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) ve geçerli olduğu yerlerde Avrupa Genel Veri Koruma Tüzüğü
@@ -171,6 +189,7 @@
         <li>Your favorites, albums and settings stay on your device. They never reach our servers.</li>
         <li>The free version shows ads through Google AdMob, which processes some device information for advertising.</li>
         <li>Google Play or the App Store handles purchases, and RevenueCat checks your subscription. We never see your card details.</li>
+        <li>We use Google's Firebase services to fix crashes and see which features are used. In Europe, usage data is collected only if you consent.</li>
       </ul>
     </div>
 
@@ -202,7 +221,8 @@
       ads and to prevent fraud.</p>
     <ul>
       <li>In the European Economic Area, the UK and Switzerland, Google's consent form asks for your consent before
-        personalized ads. You can change your choice later in Settings › "Ad privacy preferences".</li>
+        personalized ads. Your choice applies to usage analytics too (section 7). You can change it later in Settings ›
+        "Ad privacy choices".</li>
       <li>On iOS, Apple's permission prompt appears before the IDFA is used for personalized ads. You can withdraw it at any
         time in Settings › Privacy &amp; Security › Tracking.</li>
       <li>On Android, you can reset or delete your advertising ID in your device settings.</li>
@@ -226,17 +246,33 @@
       <li>The home screen widget shows information stored on your device.</li>
     </ul>
 
-    <h2>7. Analytics and crash reports</h2>
-    <p>The app contains no analytics or crash-reporting tool of our own. If you allow it in your device settings, Google
-      Play and Apple may share anonymous technical information about crashes with us.</p>
+    <h2>7. Crash reports and usage analytics (Firebase)</h2>
+    <p>To improve the app we use Google's Firebase services:</p>
+    <ul>
+      <li><strong>Crashlytics:</strong> when the app crashes or hits an error, it sends a report: where in the code it
+        happened, device model, operating system and app version, free memory and storage, the time and an installation
+        ID. We use these reports only to find and fix bugs; Google keeps them for 90 days.</li>
+      <li><strong>Analytics:</strong> records events that show how the app is used: app opens, screens viewed and
+        features used, session length. With them it processes an app instance ID, device model, operating system,
+        language, app version and the country or region derived from your IP address. It has no name or email. We use
+        this data to improve the app, not to personalize ads; user-level data is kept for 2 months.</li>
+      <li>In the European Economic Area, the UK and Switzerland, Analytics stores no identifier on your device unless you
+        consent to "store and/or access information on a device" in the consent form. You can change this in Settings ›
+        "Ad privacy choices".</li>
+    </ul>
+    <p>How Firebase handles data: <a href="https://firebase.google.com/support/privacy">firebase.google.com/support/privacy</a>.
+      If you allow it in your device settings, Google Play and Apple may also share anonymous technical information about
+      crashes with us.</p>
 
     <h2>8. Legal bases and international transfers</h2>
-    <p>We rely on your consent for personalized ads (where required), on performing our contract for purchases, and on
-      legitimate interests for security and fraud prevention. Google and RevenueCat may process data outside Türkiye and
+    <p>We rely on your consent for personalized ads and, in Europe, for usage analytics; on performing our contract for
+      purchases; and on legitimate interests for crash reports, usage analytics elsewhere, security and fraud
+      prevention. Google and RevenueCat may process data outside Türkiye and
       Europe, for example in the United States.</p>
 
     <h2>9. Retention</h2>
-    <p>Information on your device stays there until you uninstall the app. What Google and RevenueCat keep, and for how
+    <p>Information on your device stays there until you uninstall the app. Crashlytics reports are kept for 90 days and
+      user-level Analytics data for 2 months. What Google keeps for advertising and what RevenueCat keeps, and for how
       long, follows their own policies. You can ask us to delete the purchase records held by RevenueCat.</p>
 
     <h2>10. Your rights</h2>

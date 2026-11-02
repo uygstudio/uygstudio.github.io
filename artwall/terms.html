@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Artwall — Terms of Use · Kullanım Şartları</title>
+<meta name="description" content="Terms of use, subscriptions and content licenses of the Artwall app.">
+<style>
+  :root {
+    --bg: #fbf8f2; --text: #221d16; --muted: #6b6255; --accent: #9a6b12; --line: #e6dfd2; --card: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #16130f; --text: #efe8dc; --muted: #a99f90; --accent: #e7b75a; --line: #2e2922; --card: #1f1b16; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  main { max-width: 720px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1, h2 { font-family: Georgia, "Times New Roman", serif; font-weight: 600; line-height: 1.25; }
+  h1 { font-size: 2rem; margin: 8px 0 4px; }
+  h2 { font-size: 1.3rem; margin: 36px 0 8px; }
+  p, li { margin: 0 0 12px; }
+  ul { padding-left: 22px; }
+  a { color: var(--accent); overflow-wrap: anywhere; }
+  .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 24px; }
+  .lang-switch { display: flex; gap: 8px; justify-content: flex-end; }
+  .lang-switch button {
+    font: inherit; font-size: 0.9rem; padding: 6px 14px; border-radius: 999px; cursor: pointer;
+    border: 1px solid var(--line); background: transparent; color: var(--text);
+  }
+  .lang-switch button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+  /* Without JavaScript both languages show; with it, only the chosen one. */
+  .js [lang="tr"]:not(html), .js [lang="en"]:not(html) { display: none; }
+  .js.show-tr section[lang="tr"], .js.show-en section[lang="en"] { display: block; }
+  footer { margin-top: 48px; color: var(--muted); font-size: 0.9rem; border-top: 1px solid var(--line); padding-top: 16px; }
+</style>
+<script>
+  (function () {
+    var root = document.documentElement;
+    var asked = new URLSearchParams(location.search).get("lang");
+    var lang = asked === "tr" || asked === "en" ? asked
+      : ((navigator.languages || [navigator.language || "en"])[0] || "en").toLowerCase().indexOf("tr") === 0 ? "tr" : "en";
+    root.classList.add("js", "show-" + lang);
+    root.lang = lang;
+    window.setLang = function (value) {
+      root.classList.remove("show-tr", "show-en");
+      root.classList.add("show-" + value);
+      root.lang = value;
+      document.querySelectorAll(".lang-switch button").forEach(function (b) {
+        b.setAttribute("aria-pressed", String(b.dataset.lang === value));
+      });
+      var other = document.getElementById("other-page");
+      if (other) other.href = other.getAttribute("data-page") + "?lang=" + value;
+    };
+    document.addEventListener("DOMContentLoaded", function () { window.setLang(lang); });
+  })();
+</script>
+</head>
+<body>
+<main>
+  <nav class="lang-switch" aria-label="Language / Dil">
+    <button type="button" data-lang="tr" aria-pressed="false" onclick="setLang('tr')">Türkçe</button>
+    <button type="button" data-lang="en" aria-pressed="false" onclick="setLang('en')">English</button>
+  </nav>
+
+  <section lang="tr">
+    <h1>Artwall Kullanım Şartları</h1>
+    <p class="meta">Yürürlük tarihi: 2 Kasım 2026</p>
+
+    <h2>1. Taraflar ve kabul</h2>
+    <p>Bu şartlar, UYG Studio tarafından yayınlanan Artwall uygulamasını (Android ve iOS) kullanman için geçerlidir.
+      Uygulamayı kullanarak bu şartları kabul etmiş olursun. Kişisel verilerin nasıl işlendiğini
+      <a href="privacy.html">Gizlilik Politikası</a> anlatır.</p>
+
+    <h2>2. Uygulama</h2>
+    <p>Artwall her gün bir sanat eseri gösterir, eserleri keşfetmeni, favorilere ve albümlere eklemeni, duvar kağıdı
+      yapmanı sağlar. Uygulamayı kişisel ve ticari olmayan amaçlarla kullanabilirsin. Uygulamayı kopyalamak, tersine
+      mühendislikle çözmek, kötüye kullanmak ya da hizmetin işleyişini bozmaya çalışmak yasaktır.</p>
+    <p>iOS'ta uygulama, Apple'ın
+      <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Standart Son Kullanıcı Lisans Sözleşmesi
+      (EULA)</a> kapsamında lisanslanır. Bu şartlar onu tamamlar; çelişki olursa iOS'ta Apple'ın sözleşmesi geçerlidir.</p>
+
+    <h2>3. Ücretsiz sürüm ve Premium</h2>
+    <p>Uygulamanın büyük kısmı ücretsizdir ve reklam gösterir. Premium; reklamsız kullanım, en yüksek çözünürlükte
+      kaydetme, sınırsız albüm, tüm arşiv ve Android'de her sabah kendiliğinden değişen duvar kağıdı sunar. Premium'un
+      içeriği zamanla değişebilir; güncel hâli uygulamadaki Premium sayfasındadır.</p>
+
+    <h2>4. Abonelikler ve ödeme</h2>
+    <ul>
+      <li>Planlar: aylık abonelik, yıllık abonelik ve ömür boyu (tek seferlik ödeme). Güncel fiyatlar satın almadan önce
+        uygulamada gösterilir; ülkeye göre değişebilir.</li>
+      <li>Ödeme, satın almayı onayladığında Google Play hesabından ya da Apple Kimliği'nden alınır. Deneme süresi olan
+        planlarda ilk ödeme deneme bitince alınır.</li>
+      <li>Abonelikler, dönem bitmeden en az 24 saat önce kapatılmazsa aynı süre ve fiyatla kendiliğinden yenilenir.
+        Yenileme ücreti dönemin son 24 saati içinde alınır.</li>
+      <li>Yıllık planda 7 günlük ücretsiz deneme sunulabilir. Deneme bitmeden en az 24 saat önce iptal edersen ücret
+        alınmaz. Deneme sırasında bir abonelik satın alırsan denemenin kalan kısmı geçersiz olur.</li>
+      <li>Aboneliğini Google Play › Ödemeler ve abonelikler › Abonelikler'den ya da iPhone'da Ayarlar › Apple Kimliği ›
+        Abonelikler'den yönetebilir ve iptal edebilirsin. Uygulamayı silmek aboneliği iptal etmez.</li>
+      <li>İptal, mevcut dönemin sonunda geçerli olur; Premium o zamana kadar açık kalır.</li>
+      <li>İadeler Google Play'in ve Apple'ın iade kurallarına tabidir ve onlardan istenir. Tüketici olarak yasal
+        hakların saklıdır.</li>
+      <li>Ömür boyu plan tek seferlik bir ödemedir ve uygulama sunulduğu sürece Premium'u açık tutar.</li>
+      <li>Aynı mağaza hesabıyla yeni bir cihazda ya da yeniden yüklemede "Geri yükle" ile satın almanı geri alabilirsin.</li>
+      <li>Fiyat değişiklikleri mağazaların kurallarına göre önceden bildirilir.</li>
+    </ul>
+
+    <h2>5. İçerik, kaynaklar ve lisanslar</h2>
+    <ul>
+      <li><strong>Eserler:</strong> Görseller ve eser bilgileri Rijksmuseum'un (Amsterdam) açık koleksiyonundan gelir ve
+        kamu malıdır (Public Domain / CC0). Artwall, Rijksmuseum'la bağlantılı değildir ve müze tarafından
+        desteklenmemektedir.</li>
+      <li><strong>Müze metinleri:</strong> Eser hikâyeleri ve sahne açıklamaları Rijksmuseum'un metinleridir (CC0). Türkçe
+        hâlleri ve Felemenkçeden çevrilen sahne açıklamaları bizim çevirimizdir.</li>
+      <li><strong>Sanatçı metinleri:</strong> Sanatçı hakkındaki metinler, Wikipedia makalelerinin giriş bölümlerinden
+        alınmıştır ve <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.tr">CC BY-SA 4.0</a> lisansıyla
+        sunulur. Yazarları Wikipedia katkıcılarıdır; her makalenin geçmişi yazarlarını listeler. Türkçe Wikipedia'da
+        bulunmayan metinler İngilizce makaleden Türkçeye çevrilmiştir; tüm metinlerden kaynak numaraları çıkarılmıştır
+        (değiştirilmiştir). Bu metinler aynı lisansla paylaşılabilir.</li>
+      <li><strong>Yazı tipi:</strong> Başlıklar Fraunces yazı tipiyle yazılır (SIL Open Font License 1.1).</li>
+    </ul>
+    <p>Uygulamanın tasarımı, kodu, adı ve simgesi UYG Studio'ya aittir.</p>
+
+    <h2>6. Sorumluluk</h2>
+    <p>Uygulamayı olduğu gibi sunarız; kesintisiz ya da hatasız çalışacağını garanti edemeyiz. Eser bilgileri müzenin
+      ve Wikipedia'nın kaynaklarına dayanır ve hata içerebilir. Yasanın izin verdiği ölçüde, uygulamanın kullanımından
+      doğan dolaylı zararlardan sorumlu değiliz. Bu, tüketici olarak sahip olduğun zorunlu yasal hakları sınırlamaz.</p>
+
+    <h2>7. Değişiklikler ve sona erme</h2>
+    <p>Bu şartları güncelleyebiliriz; güncel hâli bu sayfada yayımlanır ve yukarıdaki tarih değişir. Önemli değişiklikleri
+      uygulamada da duyururuz. Uygulamayı silerek dilediğin zaman kullanmayı bırakabilirsin.</p>
+
+    <h2>8. Uygulanacak hukuk</h2>
+    <p>Bu şartlara Türkiye Cumhuriyeti hukuku uygulanır. Yaşadığın ülkenin zorunlu tüketici koruma kuralları saklıdır.</p>
+
+    <h2>9. İletişim</h2>
+    <p>Soruların için: <a href="mailto:uygstudio@gmail.com">uygstudio@gmail.com</a></p>
+  </section>
+
+  <section lang="en">
+    <h1>Artwall Terms of Use</h1>
+    <p class="meta">Effective date: November 2, 2026</p>
+
+    <h2>1. Parties and acceptance</h2>
+    <p>These terms apply to your use of the Artwall app (Android and iOS), published by UYG Studio. By using the app you
+      accept them. How your personal data is handled is described in the <a href="privacy.html">Privacy Policy</a>.</p>
+
+    <h2>2. The app</h2>
+    <p>Artwall shows an artwork every day and lets you explore works, save favorites and albums, and make wallpapers. You
+      may use the app for personal, non-commercial purposes. Copying, reverse engineering or misusing the app, or trying
+      to disrupt the service, is not allowed.</p>
+    <p>On iOS, the app is licensed to you under Apple's
+      <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Standard Licensed Application End User
+      License Agreement (EULA)</a>. These terms add to it; where they conflict on iOS, Apple's agreement prevails.</p>
+
+    <h2>3. Free version and Premium</h2>
+    <p>Most of the app is free and shows ads. Premium offers no ads, highest-resolution saving, unlimited albums, the full
+      archive and, on Android, a wallpaper that changes by itself every morning. What Premium includes may change over
+      time; the Premium page in the app shows the current list.</p>
+
+    <h2>4. Subscriptions and payment</h2>
+    <ul>
+      <li>Plans: a monthly subscription, a yearly subscription and lifetime (a one-time payment). Current prices are shown
+        in the app before you buy and may vary by country.</li>
+      <li>Payment is charged to your Google Play account or Apple ID when you confirm the purchase. For plans with a free
+        trial, the first payment is charged when the trial ends.</li>
+      <li>Subscriptions renew automatically for the same period and price unless turned off at least 24 hours before the
+        end of the current period. Renewal is charged within the last 24 hours of the period.</li>
+      <li>The yearly plan may include a 7-day free trial. Cancel at least 24 hours before it ends and you will not be
+        charged. If you buy a subscription during a trial, the rest of the trial is forfeited.</li>
+      <li>Manage or cancel your subscription in Google Play › Payments &amp; subscriptions › Subscriptions, or on iPhone in
+        Settings › Apple ID › Subscriptions. Deleting the app does not cancel a subscription.</li>
+      <li>Cancellation takes effect at the end of the current period; Premium stays on until then.</li>
+      <li>Refunds follow Google Play's and Apple's refund rules and are requested from them. Your statutory consumer rights
+        are not affected.</li>
+      <li>The lifetime plan is a one-time payment and keeps Premium on for as long as the app is offered.</li>
+      <li>On a new device or after reinstalling, "Restore" brings back your purchase with the same store account.</li>
+      <li>Price changes are announced in advance according to the stores' rules.</li>
+    </ul>
+
+    <h2>5. Content, sources and licenses</h2>
+    <ul>
+      <li><strong>Artworks:</strong> Images and artwork data come from the open collection of the Rijksmuseum, Amsterdam, and
+        are in the public domain (Public Domain / CC0). Artwall is not affiliated with or endorsed by the Rijksmuseum.</li>
+      <li><strong>Museum texts:</strong> Artwork stories and scene descriptions are the Rijksmuseum's texts (CC0). Their
+        Turkish versions, and the scene descriptions translated from Dutch, are our translations.</li>
+      <li><strong>Artist texts:</strong> The texts about artists are taken from the introductions of Wikipedia articles and
+        are available under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Their authors are
+        the Wikipedia contributors; each article's history lists them. Texts missing from the Turkish Wikipedia were
+        translated from the English article, and citation markers were removed from all texts (modified). These texts may
+        be shared under the same license.</li>
+      <li><strong>Typeface:</strong> Titles are set in Fraunces (SIL Open Font License 1.1).</li>
+    </ul>
+    <p>The app's design, code, name and icon belong to UYG Studio.</p>
+
+    <h2>6. Liability</h2>
+    <p>We provide the app as it is and cannot guarantee that it will work without interruption or errors. Artwork
+      information relies on the museum's and Wikipedia's sources and may contain mistakes. To the extent the law allows,
+      we are not liable for indirect damages arising from the use of the app. This does not limit your mandatory rights
+      as a consumer.</p>
+
+    <h2>7. Changes and termination</h2>
+    <p>We may update these terms; the current version is published on this page and the date above changes. We will also
+      announce significant changes in the app. You can stop using the app at any time by deleting it.</p>
+
+    <h2>8. Governing law</h2>
+    <p>These terms are governed by the laws of the Republic of Türkiye. The mandatory consumer protection rules of your
+      country of residence remain unaffected.</p>
+
+    <h2>9. Contact</h2>
+    <p>Questions: <a href="mailto:uygstudio@gmail.com">uygstudio@gmail.com</a></p>
+  </section>
+
+  <footer>
+    Artwall · <a id="other-page" data-page="privacy.html" href="privacy.html">Gizlilik Politikası / Privacy Policy</a>
+  </footer>
+</main>
+</body>
+</html>

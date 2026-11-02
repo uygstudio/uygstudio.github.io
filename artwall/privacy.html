@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Artwall — Privacy Policy · Gizlilik Politikası</title>
+<meta name="description" content="How the Artwall app handles your data.">
+<style>
+  :root {
+    --bg: #fbf8f2; --text: #221d16; --muted: #6b6255; --accent: #9a6b12; --line: #e6dfd2; --card: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #16130f; --text: #efe8dc; --muted: #a99f90; --accent: #e7b75a; --line: #2e2922; --card: #1f1b16; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  main { max-width: 720px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1, h2 { font-family: Georgia, "Times New Roman", serif; font-weight: 600; line-height: 1.25; }
+  h1 { font-size: 2rem; margin: 8px 0 4px; }
+  h2 { font-size: 1.3rem; margin: 36px 0 8px; }
+  p, li { margin: 0 0 12px; }
+  ul { padding-left: 22px; }
+  a { color: var(--accent); }
+  .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 24px; }
+  .summary { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px 20px; }
+  .summary ul { margin: 8px 0 0; }
+  .lang-switch { display: flex; gap: 8px; justify-content: flex-end; }
+  .lang-switch button {
+    font: inherit; font-size: 0.9rem; padding: 6px 14px; border-radius: 999px; cursor: pointer;
+    border: 1px solid var(--line); background: transparent; color: var(--text);
+  }
+  .lang-switch button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+  /* Without JavaScript both languages show; with it, only the chosen one. */
+  .js [lang="tr"]:not(html), .js [lang="en"]:not(html) { display: none; }
+  .js.show-tr section[lang="tr"], .js.show-en section[lang="en"] { display: block; }
+  footer { margin-top: 48px; color: var(--muted); font-size: 0.9rem; border-top: 1px solid var(--line); padding-top: 16px; }
+</style>
+<script>
+  (function () {
+    var root = document.documentElement;
+    var asked = new URLSearchParams(location.search).get("lang");
+    var lang = asked === "tr" || asked === "en" ? asked
+      : ((navigator.languages || [navigator.language || "en"])[0] || "en").toLowerCase().indexOf("tr") === 0 ? "tr" : "en";
+    root.classList.add("js", "show-" + lang);
+    root.lang = lang;
+    window.setLang = function (value) {
+      root.classList.remove("show-tr", "show-en");
+      root.classList.add("show-" + value);
+      root.lang = value;
+      document.querySelectorAll(".lang-switch button").forEach(function (b) {
+        b.setAttribute("aria-pressed", String(b.dataset.lang === value));
+      });
+      var other = document.getElementById("other-page");
+      if (other) other.href = other.getAttribute("data-page") + "?lang=" + value;
+    };
+    document.addEventListener("DOMContentLoaded", function () { window.setLang(lang); });
+  })();
+</script>
+</head>
+<body>
+<main>
+  <nav class="lang-switch" aria-label="Language / Dil">
+    <button type="button" data-lang="tr" aria-pressed="false" onclick="setLang('tr')">Türkçe</button>
+    <button type="button" data-lang="en" aria-pressed="false" onclick="setLang('en')">English</button>
+  </nav>
+
+  <section lang="tr">
+    <h1>Artwall Gizlilik Politikası</h1>
+    <p class="meta">Yürürlük tarihi: 2 Kasım 2026</p>
+
+    <div class="summary">
+      <strong>Kısaca</strong>
+      <ul>
+        <li>Artwall'da hesap ya da üyelik yok. Adını, e-postanı veya telefon numaranı istemeyiz.</li>
+        <li>Favorilerin, albümlerin ve ayarların yalnızca cihazında durur. Bizim sunucularımıza gitmez.</li>
+        <li>Ücretsiz sürümde reklamlar Google AdMob ile gösterilir. AdMob, reklam için bazı cihaz bilgilerini işler.</li>
+        <li>Satın almaları Google Play ya da App Store yapar. Abonelik durumunu RevenueCat doğrular. Kart bilgilerini hiçbir zaman görmeyiz.</li>
+      </ul>
+    </div>
+
+    <h2>1. Biz kimiz</h2>
+    <p>Artwall uygulamasını UYG Studio geliştirir ve yayınlar (bu metinde "biz"). Bu politika, Android ve iOS'taki
+      Artwall uygulaması için geçerlidir. Sorularını <a href="mailto:uygstudio@gmail.com">uygstudio@gmail.com</a> adresine yazabilirsin.</p>
+
+    <h2>2. Cihazında kalan bilgiler</h2>
+    <p>Uygulamanın çalışması için şunlar yalnızca cihazında saklanır:</p>
+    <ul>
+      <li>Favorilerin ve albümlerin,</li>
+      <li>Ayarların: tema, bildirim ve otomatik duvar kağıdı tercihleri, tanıtımın görülüp görülmediği,</li>
+      <li>Bazı sayaçlar: uygulamanın ilk açıldığı zaman, gösterilen tam ekran reklam sayısı (reklamları seyrek tutmak için) ve
+        puanlama isteğinin zamanlaması.</li>
+    </ul>
+    <p>Bu bilgiler bize gönderilmez. Uygulamayı silince silinirler. Android'de cihazının yedekleme özelliği açıksa, Android
+      bunları diğer uygulama verileriyle birlikte Google hesabının yedeğine alabilir. Bu yedeği Google yönetir.</p>
+
+    <h2>3. Eser görselleri</h2>
+    <p>Görseller, Rijksmuseum'un görsel sunucusundan (<code>iiif.micr.io</code>) yüklenir. Her internet isteğinde olduğu
+      gibi bu sunucu, isteği yanıtlamak için IP adresini ve cihazının istek bilgilerini görür. Uygulama bu sunucuya
+      başka bir bilgi göndermez. Artwall, Rijksmuseum'la bağlantılı değildir.</p>
+
+    <h2>4. Reklamlar (Google AdMob)</h2>
+    <p>Ücretsiz sürüm, Google'ın AdMob hizmetiyle reklam gösterir. Bunun için Google şunları toplayabilir ve işleyebilir:
+      reklam kimliği (Android reklam kimliği, iOS'ta izin verirsen IDFA), IP adresi ve ondan çıkarılan yaklaşık konum,
+      cihaz ve uygulama bilgileri, reklam etkileşimleri. Google bu bilgileri reklam göstermek, ölçmek, kişiselleştirmek ve
+      sahtekârlığı önlemek için kullanır.</p>
+    <ul>
+      <li>Avrupa Ekonomik Alanı, Birleşik Krallık ve İsviçre'de, kişiselleştirilmiş reklamdan önce Google'ın onay formuyla
+        iznin istenir. Seçimini sonradan Ayarlar › "Reklam gizlilik tercihleri"nden değiştirebilirsin.</li>
+      <li>iOS'ta kişiselleştirilmiş reklam için IDFA'ya erişmeden önce Apple'ın izin penceresi çıkar. İzni
+        Ayarlar › Gizlilik ve Güvenlik › Takip'ten istediğin zaman geri alabilirsin.</li>
+      <li>Android'de reklam kimliğini cihaz ayarlarından sıfırlayabilir ya da silebilirsin.</li>
+      <li>Premium kullanıcılara reklam gösterilmez.</li>
+    </ul>
+    <p>Google'ın bu verileri nasıl kullandığı:
+      <a href="https://policies.google.com/technologies/partner-sites">policies.google.com/technologies/partner-sites</a></p>
+
+    <h2>5. Satın almalar (Google Play, App Store, RevenueCat)</h2>
+    <p>Premium'u Google Play ya da App Store üzerinden satın alırsın. Ödemeyi onlar alır, kart ve fatura bilgilerini biz
+      hiçbir zaman görmeyiz. Abonelik durumunu doğrulamak ve satın almaları geri yüklemek için RevenueCat'i (RevenueCat, Inc.,
+      ABD) kullanırız. RevenueCat şunları işler: cihazında oluşturulan anonim bir kullanıcı kimliği, mağazanın satın alma
+      kaydı, uygulama ve işletim sistemi sürümü, ülke ve para birimi, IP adresi. Ayrıntılar:
+      <a href="https://www.revenuecat.com/privacy">revenuecat.com/privacy</a></p>
+
+    <h2>6. Bildirimler, duvar kağıdı ve fotoğraflar</h2>
+    <ul>
+      <li>"Günün eseri" bildirimleri cihazında planlanır. Bildirim sunucusu kullanmayız.</li>
+      <li>Android'de duvar kağıdını ve her sabahki otomatik duvar kağıdını cihazın kendisi ayarlar.</li>
+      <li>Görsel kaydederken iOS yalnızca Fotoğraflar'a <em>ekleme</em> izni ister. Fotoğraflarını göremeyiz.</li>
+      <li>Ana ekran widget'ı cihazındaki bilgileri gösterir.</li>
+    </ul>
+
+    <h2>7. Analiz ve çökme raporları</h2>
+    <p>Uygulamada kendi analiz ya da çökme raporu aracımız yok. Cihaz ayarlarında izin verdiysen Google Play ve Apple,
+      uygulamanın çökmeleri hakkında anonim teknik bilgileri bizimle paylaşabilir.</p>
+
+    <h2>8. Hukuki dayanak ve yurt dışına aktarım</h2>
+    <p>Kişiselleştirilmiş reklam için izne (gerektiği yerlerde), satın almalar için sözleşmenin yerine getirilmesine,
+      güvenlik ve sahtekârlığın önlenmesi için meşru menfaate dayanırız. Google ve RevenueCat verileri Türkiye ve Avrupa
+      dışında, örneğin ABD'de işleyebilir.</p>
+
+    <h2>9. Saklama süresi</h2>
+    <p>Cihazındaki bilgiler, uygulamayı silene kadar cihazında kalır. Google ve RevenueCat'in tuttuğu bilgilerin süresi
+      kendi politikalarına bağlıdır. RevenueCat'teki satın alma kayıtlarının silinmesini bizden isteyebilirsin.</p>
+
+    <h2>10. Hakların</h2>
+    <p>6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) ve geçerli olduğu yerlerde Avrupa Genel Veri Koruma Tüzüğü
+      (GDPR) kapsamında; verilerinin işlenip işlenmediğini öğrenme, bilgi isteme, düzeltme, silme, işlemeye itiraz etme ve
+      bir denetim makamına (Türkiye'de Kişisel Verileri Koruma Kurumu) şikâyette bulunma hakların vardır. Talebini
+      <a href="mailto:uygstudio@gmail.com">uygstudio@gmail.com</a> adresine gönder. Hesap tutmadığımız için cihazındaki bilgilere erişemeyiz.
+      Google'ın reklam verileri için Google'ın kendi araçları da kullanılabilir.</p>
+
+    <h2>11. Çocuklar</h2>
+    <p>Artwall 13 yaşından küçük çocuklara yönelik değildir ve onlardan bilerek veri toplamayız.</p>
+
+    <h2>12. Değişiklikler</h2>
+    <p>Bu politikayı değiştirirsek güncel hâlini bu sayfada yayımlar ve yukarıdaki tarihi güncelleriz. Önemli
+      değişiklikleri uygulamada da duyururuz.</p>
+  </section>
+
+  <section lang="en">
+    <h1>Artwall Privacy Policy</h1>
+    <p class="meta">Effective date: November 2, 2026</p>
+
+    <div class="summary">
+      <strong>In short</strong>
+      <ul>
+        <li>Artwall has no accounts or sign-up. We never ask for your name, email or phone number.</li>
+        <li>Your favorites, albums and settings stay on your device. They never reach our servers.</li>
+        <li>The free version shows ads through Google AdMob, which processes some device information for advertising.</li>
+        <li>Google Play or the App Store handles purchases, and RevenueCat checks your subscription. We never see your card details.</li>
+      </ul>
+    </div>
+
+    <h2>1. Who we are</h2>
+    <p>The Artwall app is developed and published by UYG Studio ("we"). This policy applies to the Artwall app on Android
+      and iOS. Questions are welcome at <a href="mailto:uygstudio@gmail.com">uygstudio@gmail.com</a>.</p>
+
+    <h2>2. What stays on your device</h2>
+    <p>To make the app work, the following is stored on your device only:</p>
+    <ul>
+      <li>your favorites and albums,</li>
+      <li>your settings: theme, notification and daily wallpaper choices, whether you have seen the introduction,</li>
+      <li>a few counters: when you first opened the app, how many full-screen ads were shown (to keep them rare) and the
+        timing of the rating request.</li>
+    </ul>
+    <p>None of this is sent to us, and it is deleted when you uninstall the app. On Android, if your device's backup is
+      turned on, Android may include it in your Google account's backup along with other app data; Google manages that
+      backup.</p>
+
+    <h2>3. Artwork images</h2>
+    <p>Images are loaded from the Rijksmuseum's image server (<code>iiif.micr.io</code>). Like any web server, it sees your IP
+      address and your device's request information to answer the request. The app sends it nothing else. Artwall is not
+      affiliated with the Rijksmuseum.</p>
+
+    <h2>4. Advertising (Google AdMob)</h2>
+    <p>The free version shows ads through Google's AdMob service. To do so, Google may collect and process: advertising
+      identifiers (Android advertising ID; on iOS, the IDFA if you allow it), your IP address and the approximate location
+      derived from it, device and app information, and ad interactions. Google uses this to serve, measure and personalize
+      ads and to prevent fraud.</p>
+    <ul>
+      <li>In the European Economic Area, the UK and Switzerland, Google's consent form asks for your consent before
+        personalized ads. You can change your choice later in Settings › "Ad privacy preferences".</li>
+      <li>On iOS, Apple's permission prompt appears before the IDFA is used for personalized ads. You can withdraw it at any
+        time in Settings › Privacy &amp; Security › Tracking.</li>
+      <li>On Android, you can reset or delete your advertising ID in your device settings.</li>
+      <li>Premium users see no ads.</li>
+    </ul>
+    <p>How Google uses this data:
+      <a href="https://policies.google.com/technologies/partner-sites">policies.google.com/technologies/partner-sites</a></p>
+
+    <h2>5. Purchases (Google Play, App Store, RevenueCat)</h2>
+    <p>You buy Premium through Google Play or the App Store. They take the payment; we never see your card or billing
+      details. We use RevenueCat (RevenueCat, Inc., USA) to check your subscription and restore purchases. RevenueCat
+      processes an anonymous user ID created on your device, the store's purchase record, app and operating system version,
+      country and currency, and your IP address. Details:
+      <a href="https://www.revenuecat.com/privacy">revenuecat.com/privacy</a></p>
+
+    <h2>6. Notifications, wallpaper and photos</h2>
+    <ul>
+      <li>"Today's artwork" notifications are scheduled on your device. We use no notification server.</li>
+      <li>On Android, your device itself sets the wallpaper, including the daily wallpaper each morning.</li>
+      <li>To save an image, iOS asks only for permission to <em>add</em> to Photos. We cannot see your photos.</li>
+      <li>The home screen widget shows information stored on your device.</li>
+    </ul>
+
+    <h2>7. Analytics and crash reports</h2>
+    <p>The app contains no analytics or crash-reporting tool of our own. If you allow it in your device settings, Google
+      Play and Apple may share anonymous technical information about crashes with us.</p>
+
+    <h2>8. Legal bases and international transfers</h2>
+    <p>We rely on your consent for personalized ads (where required), on performing our contract for purchases, and on
+      legitimate interests for security and fraud prevention. Google and RevenueCat may process data outside Türkiye and
+      Europe, for example in the United States.</p>
+
+    <h2>9. Retention</h2>
+    <p>Information on your device stays there until you uninstall the app. What Google and RevenueCat keep, and for how
+      long, follows their own policies. You can ask us to delete the purchase records held by RevenueCat.</p>
+
+    <h2>10. Your rights</h2>
+    <p>Under Türkiye's Personal Data Protection Law (KVKK) and, where it applies, the EU General Data Protection Regulation
+      (GDPR), you have the right to know whether your data is processed, to access, correct or delete it, to object to its
+      processing, and to complain to a supervisory authority. Send requests to <a href="mailto:uygstudio@gmail.com">uygstudio@gmail.com</a>. As
+      we keep no accounts, we cannot access the information on your device. For Google's advertising data you can also use
+      Google's own tools.</p>
+
+    <h2>11. Children</h2>
+    <p>Artwall is not directed at children under 13, and we do not knowingly collect data from them.</p>
+
+    <h2>12. Changes</h2>
+    <p>If we change this policy, we will publish the new version on this page and update the date above. We will also
+      announce significant changes in the app.</p>
+  </section>
+
+  <footer>
+    Artwall · <a id="other-page" data-page="terms.html" href="terms.html">Kullanım Şartları / Terms of Use</a>
+  </footer>
+</main>
+</body>
+</html>
